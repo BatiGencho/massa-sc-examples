@@ -15,6 +15,18 @@ export function initialize(_args: string): void {
     Storage.set_data("gameWinner", "n");
 }
 
+export function getCurrentPlayer(): string {
+    return Storage.get_data("currentPlayer");
+}
+
+export function getGameState(): string {
+    return Storage.get_data("gameState");
+}
+
+export function getGameWinner(): string {
+    return Storage.get_data("gameWinner");
+}
+
 export function play(_args: string): void {
     const args = JSON.parse<PlayArgs>(_args);
     let game_winner = Storage.get_data("gameWinner");
